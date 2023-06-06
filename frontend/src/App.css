@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body,
+html {
+  scrollbar-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  color: black;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: transparent;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.noteBlockMain {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 20px 0;
+}
+
+.noteBlockMain .add_block_btn {
+  width: 100%;
+  text-align: end;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.noteBlockMain .add_block_btn button {
+  width: auto;
+  padding: 5px 20px;
+  font-size: 16px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: black;
+}
+
+.noteBlockMain .add_block_btn button:hover{
+  background: white;
+  color: black;
+}
+
+.noteBlockMain ul {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.noteBlockMain ul li {
+  width: calc(100% / 4 - 15px);
+  background: #f3f3f3;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 15px;
+  position: relative;
+}
+.noteBlockMain ul li .blockTop{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.noteBlockMain ul li .note_action {
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 5px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 9;
+}
+.noteBlockMain ul li .note_action button{
+  width: auto;
+  padding: 0 5px;
+  border: 0;
+  background: transparent;
+}
+.noteBlockMain ul li .blockTop .note_title {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.noteBlockMain ul li .note_description {
+  width: 100%;
+  font-size: 14px;
+  color: #464646;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+
+/* .structure {
+  display: flex;
+  justify-content: center;
+  margin-top: 1% !important;
+} */
+
+/* .error {
+  color: rgb(255, 0, 0);
+} */
+
+.addNote{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNote .noteInner{
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #ccc;
+  border-radius: 10px;
+}
+.addNote .noteInner h1 {
+  width: 100%;
+  font-size: 28px;
+  color: #212121;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.addNote .noteInner .addNoteField{
+  width: 100%;
+  margin-bottom: 15px;
+}
+.addNote .noteInner .addNoteField .fieldWrapper{
+  width: 100%;
+
+}
+.addNote .noteInner .addNoteField .fieldWrapper label{
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+}
+.addNote .noteInner .addNoteField .fieldWrapper input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #c9c9c9;
+  font-size: 16px;
+  color: black;
+  padding: 0 10px;
+  background: rgba(255,255,255,.5);
+  border-radius: 5px;
+  outline: none;
+}
+.addNote .noteInner .addNoteField .fieldWrapper input:focus{
+  box-shadow: 0 0 5px -2px black;
+}
+.addNote .noteInner .addNoteField .error{
+  width: 100%;
+  margin-top: 3px;
+  color: #ff0000;
+  font-size: 14px;
+}
+.addNote .noteInner .noteSumbitBtn {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.addNote .noteInner .noteSumbitBtn button {
+  width: auto;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #212121;
+  border: 2px solid #212121;
+  border-radius: 5px;
+  outline: none;
+}
+.addNote .noteInner .noteSumbitBtn button:hover{
+  background: transparent;
+  color: #212121;
+}
+
+@media (max-width:991px) {
+  .noteBlockMain ul{
+    gap: 18px;
+  }
+  .noteBlockMain ul li{
+    width: calc(100% / 3 - 12px);
+  }
+}
+
+@media (max-width:767px) {
+  .noteBlockMain ul li{
+    width: calc(100% / 2 - 9px);
+  }
+}
+
+@media (max-width:575px) {
+  .noteBlockMain ul li{
+    width: 100%;
+  }
+}
+
+.noteDetail{
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0;
+  background: #e1dede63;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: calc(100vh - 40px);
+}
+.noteDetail .detailTop{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.noteDetail .detailTop .noteSumbitBtn {
+  width: auto;
+}
+
+.noteDetail .detailTop .noteSumbitBtn button {
+  width: auto;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #212121;
+  border: 2px solid #212121;
+  border-radius: 5px;
+  outline: none;
+}
+.noteDetail .detailTop .noteSumbitBtn button:hover{
+  background: transparent;
+  color: #212121;
+}
+.noteDetail .noteDetail h1 {
+  width: 100%;
+  font-size: 26px;
+  color: #111;
+  margin: 0;
+}

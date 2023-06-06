@@ -1,0 +1,128 @@
+.setting_btn {
+  height: 30px;
+  width: 30px;
+}
+
+body {
+  margin-top: 20px;
+}
+.timeline-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timeline-steps .timeline-step {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-steps .timeline-step:not(:last-child):after {
+    content: "";
+    display: block;
+    border-top: 0.25rem dotted #3b82f6;
+    width: 3.46rem;
+    position: absolute;
+    left: 7.5rem;
+    top: 0.3125rem;
+  }
+  .timeline-steps .timeline-step:not(:first-child):before {
+    content: "";
+    display: block;
+    border-top: 0.25rem dotted #3b82f6;
+    width: 3.8125rem;
+    position: absolute;
+    right: 7.5rem;
+    top: 0.3125rem;
+  }
+}
+
+.timeline-steps .timeline-content {
+  width: 10rem;
+  text-align: center;
+}
+
+.timeline-steps .timeline-content .inner-circle {
+  border-radius: 1.5rem;
+  height: 1rem;
+  width: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+  content: "";
+  background-color: #3b82f6;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 6.25rem;
+  opacity: 0.5;
+}
+
+.height-2rem {
+  height: 2rem;
+}
+
+.progress,
+.progress-stacked {
+  --bs-progress-height: 0.125rem !important;
+}
+
+.height-2rem .progress {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.pointers-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.pointers {
+  height: 2rem;
+  width: 2rem;
+  background: #f8f9fa;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointers span {
+  width: 0.75rem;
+  height: 0.75rem;
+  display: block;
+  background: #c4c4c4;
+  border-radius: 0.75rem;
+}
+
+.pointers.visited span {
+  background: maroon;
+}
+
+.pointers.active span {
+  background: #dc3545;
+}
+
+.required:after {
+  content: "*";
+  position: relative;
+  font-size: inherit;
+  color: var(--bs-danger);
+  padding-left: 0.25rem;
+  font-weight: 600;
+}
